@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #120018, #2b003b);
+    color: #FFFFFF;
+    font-family: monospace;
+    opacity: 1;
+    transition: opacity 0.35s ease;
+}
+
+body.hidden {
+    opacity: 0;
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: opacity 0.2s ease, text-shadow 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+    text-shadow: 0 0 6px #FFFFFF;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 2px, transparent 1px);
+
+    background-size:
+        12vw 12vw,
+        18vw 18vw,
+        30vw 30vw;
+
+    background-position:
+        2vw 4vw,
+        8vw 10vw,
+        15vw 20vw;
+
+    opacity: 0.8;
+    animation: sparkle 4s infinite alternate;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(white 1px, transparent 1px);
+
+    background-size: 25vw 25vw;
+    background-position: 10vw 5vw;
+
+    opacity: 0.35;
+    animation: twinkle 6s infinite alternate;
+}
+
+@keyframes sparkle {
+    0% { opacity: 0.35; filter: brightness(1); }
+    50% { opacity: 1; filter: brightness(1.8); }
+    100% { opacity: 0.5; filter: brightness(1.2); }
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.15; }
+    100% { opacity: 0.5; }
+}
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.35s;
+}

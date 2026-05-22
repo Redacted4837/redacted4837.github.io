@@ -1,0 +1,41 @@
+.flags {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.trans-flag,
+.bi-flag {
+    width: 60px;
+    height: 36px;
+    border: 2px solid white;
+    image-rendering: pixelated;
+}
+
+.trans-flag {
+    background: linear-gradient(
+        to bottom,
+        #5BCEFA 0%,
+        #5BCEFA 20%,
+        #F5A9B8 20%,
+        #F5A9B8 40%,
+        #FFFFFF 40%,
+        #FFFFFF 60%,
+        #F5A9B8 60%,
+        #F5A9B8 80%,
+        #5BCEFA 80%,
+        #5BCEFA 100%
+    );
+}
+
+.bi-flag {
+    background: linear-gradient(
+        to bottom,
+        #D60270 0%,
+        #D60270 40%,
+        #9B4F96 40%,
+        #9B4F96 60%,
+        #0038A8 60%,
+        #0038A8 100%
+    );
+}
